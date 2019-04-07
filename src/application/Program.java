@@ -2,6 +2,7 @@ package application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -19,9 +20,19 @@ public class Program {
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 
 		System.out.println("=== TEST 1: Seller findById ===");
-		Seller seller = sellerDao.findById(8);
+		Seller seller = sellerDao.findById(9);
 		System.out.println(seller);
+
+		System.out.println();
 		
+		System.out.println("=== TEST 2: Seller findByDepartment ===");
+		Department department = new Department(1, null);
+		List<Seller> list = sellerDao.findByDepartment(department);
+		for (Seller item : list) {
+			System.out.println(item);
+		}
+		
+		/*
 		System.out.println();
 		
 		System.out.println("=== TEST 2: Seller deleteById ===");
@@ -34,7 +45,7 @@ public class Program {
 		Seller obj = new Seller(1, "Guilherme Tiosso", "guilherme.tiosso@gmail.com", sdf.parse("26/06/1992"), 12000.0, new Department(1, "'1', 'Computers"));
 		sellerDao.insert(obj);
 		System.out.println(seller);
-
+		*/
 		
 	}
 
