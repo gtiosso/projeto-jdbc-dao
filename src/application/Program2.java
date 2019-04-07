@@ -24,22 +24,13 @@ public class Program2 {
 
 		System.out.println();
 		
+		System.out.println("=== TEST 2: Seller findAll ===");
+		List<Department> list = departmentDao.findAll();
+		for (Department item : list) {
+			System.out.println(item);
+		}
+		
 		/*
-		System.out.println("=== TEST 2: Seller findByDepartment ===");
-		Department department = new Department(1, null);
-		List<Seller> list = sellerDao.findByDepartment(department);
-		for (Seller item : list) {
-			System.out.println(item);
-		}
-		
-		System.out.println();
-		
-		System.out.println("=== TEST 3: Seller findAll ===");
-		List<Seller> listAll = sellerDao.findAll();
-		for (Seller item : listAll) {
-			System.out.println(item);
-		}
-		
 		System.out.println();
 		
 		System.out.println("=== TEST 4: Seller insert ===");
