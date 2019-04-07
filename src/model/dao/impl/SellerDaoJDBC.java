@@ -10,6 +10,7 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 import model.exceptions.DbException;
+import model.exceptions.DbIntegrityException;
 import model.services.DB;
 
 public class SellerDaoJDBC implements SellerDao {
@@ -32,7 +33,22 @@ public class SellerDaoJDBC implements SellerDao {
 
 	@Override
 	public void deleteById(Integer id) {
+		PreparedStatement st = null;
 
+		try {
+			st = conn.prepareStatement(
+					"DELETE FROM seller "
+					+ "WHERE seller.Id = ?");
+
+			st.setInt(1, id);
+			st.executeUpdate();
+		}
+		catch (SQLException e) {
+			throw new DbIntegrityException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(st);
+		}
 	}
 
 	@Override
