@@ -1,14 +1,11 @@
 package application;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
-import model.dao.SellerDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program2 {
 
@@ -39,20 +36,16 @@ public class Program2 {
 		
 		System.out.println();
 		
-		System.out.println("=== TEST 5: Seller update ===");
-		department = departmentDao.findById(7);
-		department.setName("Stock");
+		System.out.println("=== TEST 5: Department update ===");
+		department = departmentDao.findById(8);
+		department.setName("Enfermary");
 		departmentDao.update(department);
 		System.out.println("Updated ! - New data = " + department);
 		
-		/*
 		System.out.println();
 		
-		System.out.println("=== TEST 6: Seller deleteById ===");
-		sellerDao.deleteById(5);
+		System.out.println("=== TEST 6: Department deleteById ===");
+		departmentDao.deleteById(7);
 		System.out.println("Deleted !");
-		*/
-		
 	}
-
 }
