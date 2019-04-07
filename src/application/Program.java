@@ -40,20 +40,26 @@ public class Program {
 			System.out.println(item);
 		}
 		
-		/*
 		System.out.println();
 		
-		System.out.println("=== TEST 2: Seller deleteById ===");
-		sellerDao.deleteById(8);
-		System.out.println(seller);
-
-		System.out.println();
-		
-		System.out.println("=== TEST 3: Seller insert ===");
-		Seller obj = new Seller(1, "Guilherme Tiosso", "guilherme.tiosso@gmail.com", sdf.parse("26/06/1992"), 12000.0, new Department(1, "'1', 'Computers"));
+		System.out.println("=== TEST 4: Seller insert ===");
+		Seller obj = new Seller(null, "Isabella Santos", "isabella@gmail.com", sdf.parse("10/01/2018"), 15000.0, new Department(4, null));
 		sellerDao.insert(obj);
-		System.out.println(seller);
-		*/
+		System.out.println("Inserted! New id = " + obj.getId());
+		
+		System.out.println();
+		
+		System.out.println("=== TEST 5: Seller update ===");
+		seller = sellerDao.findById(2);
+		seller.setName("Tomas Brownn");
+		sellerDao.update(seller);
+		System.out.println("Updated ! - New data = " + seller);
+		
+		System.out.println();
+		
+		//System.out.println("=== TEST 6: Seller deleteById ===");
+		//sellerDao.deleteById(5);
+
 		
 	}
 
