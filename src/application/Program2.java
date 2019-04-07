@@ -37,15 +37,15 @@ public class Program2 {
 		departmentDao.insert(obj);
 		System.out.println("Inserted! New id = " + obj.getId());
 		
-		/*
 		System.out.println();
 		
 		System.out.println("=== TEST 5: Seller update ===");
-		seller = sellerDao.findById(2);
-		seller.setName("Tomas Brownn");
-		sellerDao.update(seller);
-		System.out.println("Updated ! - New data = " + seller);
+		department = departmentDao.findById(7);
+		department.setName("Stock");
+		departmentDao.update(department);
+		System.out.println("Updated ! - New data = " + department);
 		
+		/*
 		System.out.println();
 		
 		System.out.println("=== TEST 6: Seller deleteById ===");
