@@ -24,20 +24,20 @@ public class Program2 {
 
 		System.out.println();
 		
-		System.out.println("=== TEST 2: Seller findAll ===");
+		System.out.println("=== TEST 2: Department findAll ===");
 		List<Department> list = departmentDao.findAll();
 		for (Department item : list) {
 			System.out.println(item);
 		}
 		
-		/*
 		System.out.println();
 		
-		System.out.println("=== TEST 4: Seller insert ===");
-		Seller obj = new Seller(null, "Isabella Santos", "isabella@gmail.com", sdf.parse("10/01/2018"), 15000.0, new Department(4, null));
-		sellerDao.insert(obj);
+		System.out.println("=== TEST 4: Department insert ===");
+		Department obj = new Department(null, "Fiscal");
+		departmentDao.insert(obj);
 		System.out.println("Inserted! New id = " + obj.getId());
 		
+		/*
 		System.out.println();
 		
 		System.out.println("=== TEST 5: Seller update ===");
